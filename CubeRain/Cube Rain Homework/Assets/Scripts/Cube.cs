@@ -24,6 +24,6 @@ public class Cube : MonoBehaviour
         if(collision.transform.TryGetComponent<Platform>(out Platform platform) == true)
         {
             _renderer.material.color = _targetColor;
-        }
+        } 
     }
 }
