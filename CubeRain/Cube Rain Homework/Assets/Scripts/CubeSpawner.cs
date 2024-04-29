@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CubeSpawner : MonoBehaviour
 {
-    [SerializeField] private Cube _cubePrefab;
     [SerializeField] private List<Transform> _spawnPoints;
     [SerializeField] private float _spawnRate;
+    [SerializeField] private ObjectPool _pool;
 
     private Coroutine _coroutine;
     
@@ -31,6 +31,9 @@ public class CubeSpawner : MonoBehaviour
         int minRandomValue = 0;
         int randomSpawnPoint = Random.Range(minRandomValue, _spawnPoints.Count);
 
-        Cube cube = Instantiate(_cubePrefab, _spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+        var cube = _pool.GetObject();
+
+        cube.gameObject.SetActive(true);
+        cube.transform.position = _spawnPoints[randomSpawnPoint].position;
     }
 }

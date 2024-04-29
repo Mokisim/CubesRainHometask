@@ -147,3 +147,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetColor: {r: 1, g: 0.5508795, b: 0, a: 0}
+  _changeColorCount: 1
