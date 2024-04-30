@@ -38,10 +38,5 @@ public class ObjectPool : MonoBehaviour
     public void Reset()
     {
         _pool.Clear();
-
-        for (int i = 0; i < _container.childCount; i++)
-        {
-            Destroy(_container.GetChild(i).gameObject);
-        }
     }
 }
